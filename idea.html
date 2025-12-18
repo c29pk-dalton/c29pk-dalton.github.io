@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<style>
+	#rocket{
+		width:200px;
+		height:400px;
+		background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTK4BCWHMCcHnmFVql6MfLf2uMplc_YIbttQ&s);
+		background-size: contain;
+		background-repeat: no-repeat;
+		position:absolute;
+		bottom:-120px;
+		left:45%;
+	}
+</style>
+<body>
+
+	<center>
+
+	<div id="rocket"></div>
+
+</center>
+
+<script type="text/javascript"> 
+	let og=-120;
+	let add=5;
+	document.addEventListener("click", function(){
+		add=add+5;
+		rocket.style.bottom=og+5;
+	})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		#listener{
+			height: 200px;
+			width:200px;
+			background-image: url(https://i.pinimg.com/originals/3f/18/80/3f1880697a9910f7b61ab0f9e06d019c.gif);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-color:white;
+		}
+	</style>
+</head>
+<body>
+	<div id="listener"></div>
+	<script type="text/javascript">
+		.listener.style.left="0px"
+		document.addEventListener("keypress", function(){
+			console.log("i'm a dog who is walking")
+		})
+	</script>
+
+</body>
+</html>

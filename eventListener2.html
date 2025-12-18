@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style>
+		#egg{
+			width: 150px;
+			height:150px;
+			background-image: url(egg1.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			position: absolute;
+			top: 200px;
+			background-position: center;
+		}
+	
+	</style>
+</head>
+<body>
+
+<center>
+	<div id="egg"> </div>
+</center>
+
+<script type="text/javascript"> 
+	let counter=0;
+	egg.addEventListener("click", function (){
+		counter=counter+1
+		console.log(counter)
+	if(counter==1){
+	egg.style.backgroundImage="url(egg2.png)"
+	}
+
+	if(counter==2){
+	egg.style.backgroundImage="url(bird.png)"
+	}
+
+
+})
+
+</script>
+</body>
+</html>
