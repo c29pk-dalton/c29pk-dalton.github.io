@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+#title{
+	font-size: 40px;
+}
+	 </style>
+</head>
+<body>
+
+
+<center>
+	<div id="title">What book should I read? Click!</div>
+</center>
+
+<script type="text/javascript">
+
+	let books = ["My Brilliant Friend", "The Underground Railroad", "The Metamorphosis", "The Brothers Karamazov", "The Secret History", "Jane Eyre", "Nickel Boys"]
+
+	document.addEventListener("click", function(){
+		let randomNumber= Math.round(Math.random()*7-0.5)
+		alert(books[randomNumber])
+	})
+
+</script>
+
+</body>
+</html>
