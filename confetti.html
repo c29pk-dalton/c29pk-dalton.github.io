@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style>
+		.confetti{
+			width:12px;
+			height:4px;
+			background-color: blue;
+			position:absolute;
+			left: 10px;
+		}
+	</style>
+</head>
+<body>
+
+<script type="text/javascript"> 
+
+			let distance = 0;
+
+
+	function makeConfetti (){
+		let piece = document.createElement("div")
+		piece.classList.add("confetti")
+		document.body.appendChild(piece)
+		function getRandomHexColor(){
+			const r = Math.floor(Math.random()*256);
+			const g = Math.floor(Math.random()*256);
+			const b = Math.floor(Math.random()*256);
+			return `rgb(${r}, ${g}, ${b})`;
+
+
+		}
+		let pieceColor = getRandomHexColor()
+		piece.style.backgroundColor = pieceColor
+	piece.style.left = Math.floor(Math.random()*1500)+"px"
+		piece.style.top = distance+"px"
+
+		function moveDown(){
+		distance = distance + 10;
+		piece.style.top=distance+"px"
+
+		if(distance>800){
+			distance=0
+		}
+		}
+
+		setInterval(moveDown, 150)
+
+
+
+	}
+
+
+
+	setInterval(makeConfetti, 50)
+
+</script>
+
+</body>
+</html>
