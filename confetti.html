@@ -6,14 +6,43 @@
 	<title></title>
 
 	<style>
+		body{
+			background-color:#151E3F;
+		}
 		.confetti{
 			width:12px;
 			height:4px;
 			background-color: blue;
 			position:absolute;
 			left: 10px;
+			animation-name: swing3d;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+
+		@keyframes swing{
+			from{
+				transform: rotate(var(--startRot));
+			}
+		to{
+			transform:rotate(var(--endRot));
+		}
+		}
+
+		@keyframes swing3d{
+			from{
+				transform: rotateY(-80deg);
+
+			}
+			to{
+				transform: rotateY(80deg);
+
+
+			}
 		}
 	</style>
+
 </head>
 <body>
 
@@ -34,13 +63,21 @@
 
 
 		}
+
+		let startRot = Math.random() * -60 + "deg"
+		let endRot = Math.random() * 60 + "deg"
+
+		piece.style.setProperty("--startRot", startRot)
+		piece.style.setProperty("--endRot", endRot)
+
+
 		let pieceColor = getRandomHexColor()
 		piece.style.backgroundColor = pieceColor
 	piece.style.left = Math.floor(Math.random()*1500)+"px"
 		piece.style.top = distance+"px"
 
 		function moveDown(){
-		distance = distance + 10;
+		distance = distance + 1;
 		piece.style.top=distance+"px"
 
 		if(distance>800){
@@ -48,7 +85,7 @@
 		}
 		}
 
-		setInterval(moveDown, 150)
+		setInterval(moveDown, 500)
 
 
 
@@ -56,7 +93,7 @@
 
 
 
-	setInterval(makeConfetti, 50)
+	setInterval(makeConfetti, 100)
 
 </script>
 
