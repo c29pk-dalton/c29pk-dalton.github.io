@@ -41,12 +41,26 @@
 
 			}
 		}
+
+		.button{
+			height:30px;
+			width: 30px;
+			background-color: blue;
+		}
 	</style>
 
 </head>
 <body>
-
+<button id="button"> drop confetti </button>
+<input type="color" value="#FBCCFF" id ="colorPicker">
+<input type="range" min="1" max="10" id="slider">
 <script type="text/javascript"> 
+
+	let dropConfettiBtn = document.getElementById("button")
+	let colorPicker = document.getElementById("colorPicker")
+	let slider = document.getElementById("slider")
+	console.log(slider.value)
+
 
 			let distance = 0;
 
@@ -89,12 +103,12 @@
 
 		setInterval(moveDown, 500)
 
-		let colors = ["blue", "green", "purple"]
+		let colors = ["lightblue", "hotpink", "plum", "royalblue"]
 
 	let RandomColorIndex = Math.floor(Math.random()*colors.length)
-	console.log(RandomColorIndex)
 
 	piece.style.backgroundColor = colors[RandomColorIndex]
+	//piece.style.backgroundColor = colorPicker.value
 
 
 
@@ -102,9 +116,14 @@
 
 	let array = ["literature and composition", " world history", "geometry", "biology", "spanish", "ceramics", "math team", "computer science"]
 
-	for(let i = 1; i <= 170; i++){
+	for(let i = 0; i <= 300; i++){
 			makeConfetti()
 		}
+
+		dropConfettiBtn.addEventListener("click", function(){
+			console.log("you clicked the button!")
+			makeConfetti()
+		})
 
 	
 
