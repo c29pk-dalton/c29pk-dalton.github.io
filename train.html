@@ -55,21 +55,39 @@
 	<button id="KillBtn"> remove person</button>
 
 	<div id="train"> 
-		<div class="cart">alex</div>
-		<div class="cart">gia</div>
-		<div class="cart">theo</div>
 
 	</div>
 
 
 	<script> 
 
-		let people = ["alex", "gia", "theo"]
-		people.push("kevin")
-		people.push("arjun")
-		people.pop()
+		let people = ["alex", "gia", "theo", "penelope"]
+		let train = document.getElementById("train")
+		// people.push("kevin")
+		// people.push("arjun")
+		// people.pop()
 
-		console.log(people)
+
+		function makeTrain(){
+			// make sure to remove previous children and iterations
+			train.innerHTML = ""
+			for(let i= 0; i<people.length; i++){
+			console.log(people[i])
+			// create new div
+			// add new class (cart) to this div
+			let cart = document.createElement("div")
+
+			cart.textContent = people[i]
+			cart.classList.add("cart")
+			train.appendChild(cart)
+		}
+
+		}
+		
+		makeTrain()
+		
+
+		// console.log(people)
 
 		let addPersonBtn = document.getElementById("addPerson")
 
@@ -79,14 +97,16 @@
 			people.push(personInput.value)
 			console.log(people)
 
+					makeTrain()
+
+
 		})
 
 		let removePersonBtn = document.getElementById("KillBtn")
 
 		removePersonBtn.addEventListener("click", function(){
-			let personInput = document.getElementById("person")
-			console.log(personInput.value)
-			people.pop(personInput.value)
+			people.pop()
+			makeTrain()
 			console.log(people)
 		})
 
