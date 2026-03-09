@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<style>
+
+		#button{
+			width: 80px;
+			height:80px;
+			background-color: hotpink;
+			position: absolute;
+			padding: 10px;
+			text-align: center;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div id="button">u can't click me</div>
+
+	<script>
+		// create a button variable
+	let badButton = document.getElementById("button") 
+
+	badButton.addEventListener("click", function(){
+		alert("you caught me!")
+	})
+
+	badButton.addEventListener("mouseover", function(){
+		// console.log("mousehover")
+
+		button.style.left = Math.floor(Math.random()*1200)+"px"
+		button.style.top = Math.floor(Math.random()*700)+"px"
+	})
+
+	badButton.addEventListener("mouseout", function(){
+		// console.log("mouseleaving")
+		alert("missed me!")
+	})
+
+
+
+</script>
+
+</body>
+</html>
