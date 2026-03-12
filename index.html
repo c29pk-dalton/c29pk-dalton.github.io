@@ -69,6 +69,12 @@ text-decoration:none;
 
 		}
 
+		.container{
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+
+		}
+
 		.circle:hover{
 			transform: translateY(-40px);
 			box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5);
@@ -83,22 +89,34 @@ text-decoration:none;
 		#leftCircle{
 			background-image: radial-gradient(ghostwhite, #F8F8FF, #CEC2EB);
 			color: darkblue;
-			position:fixed;
-			right:62%
+			grid-column: 2/3;
+
+			/*position:fixed;
+			right:62%*/
 		}
 
 		#middleCircle{
 			background-image: radial-gradient(steelblue, darkblue);
 			color:lavenderblush;
-			position:fixed;
-			right:32.5%;
+			grid-column: 3/4;
+
+			/*position:fixed;
+			right:32.5%;*/
 		}
 
 		#rightCircle{
 			background-image: radial-gradient(white,lavenderblush, #EFCFD4);
 			color:darkblue;
-			position:fixed;
-			right:3%;
+			grid-column: 4/5;
+			/*position:fixed;
+			right:3%;*/
+		}
+
+		@media (max-width: 800px) {
+			.circle{
+							grid-template-columns: repeat(1, 1fr);
+				
+			}
 		}
 
 
@@ -122,6 +140,7 @@ text-decoration:none;
 <center>
 <div class="filler"></div>
 <a href="aboutMe.html">
+<div class="container"> 
 <div id="leftCircle" class="circle"> 
 	about Me
 </div>
@@ -139,6 +158,7 @@ Journal
 </div>
 </a>
 
+</div>
 </center>
 
 
