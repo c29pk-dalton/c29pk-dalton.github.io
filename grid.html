@@ -13,22 +13,22 @@
 			createCanvas(400, 400)
 		}
 
-		for (let i=0; i<5; i+=5){
-			circle(i, 100, 50);
-		}
+		
 
 		function draw(){
 			background("#FAEBED");
-			stroke("ABFFF1")
-			strokeWeight(3)
-			fill("#391E63")
-			ellipse(200, 230, 150, 80);
-			fill("#FF5768")
-			circle(100, 120, 80);
-			fill("#46923c")
-			rect(250, 300, 120, 70)
-			line(5, 10, 60, 70)
+			for (let i=0; i<5; i++){
+				for(let j = 0; j < 11; j++){
+					let x = i*100
+					let y = j*100
+
+					circle(x, y, 100);
+				}
+				
+			}
 		}
+			
+		
 
 
 	</script>
