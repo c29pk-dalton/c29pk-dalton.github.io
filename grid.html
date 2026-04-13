@@ -10,20 +10,58 @@
 <body>
 	<script>
 		function setup(){
-			createCanvas(400, 400)
+			createCanvas(1455, 788)
 		}
 
 		
 
 		function draw(){
-			background("#FAEBED");
-			for (let i=0; i<5; i++){
-				for(let j = 0; j < 11; j++){
+			background("#FEF3F7");
+			
+			for (let i=0; i<16; i++){
+				for(let j = 0; j < 20; j++){
 					let x = i*100
 					let y = j*100
 
-					circle(x, y, 100);
-					text(i + "," + j, x, y)
+					push()
+					translate(x, y)
+					rotate(frameCount*0.01)
+					// fill for skin color
+					fill("#FCCCDC")
+					// ears
+					circle(0+30, 0-50, 30)
+					circle(0-30, 0-50, 30)
+					//head
+					circle(0, 0, 100);
+					//snout
+					ellipse(0, 0+10, 35, 24)
+					// snout holes
+					fill("#000000")
+					ellipse(0+5, 0+10, 5, 7)
+					ellipse(0-5, 0+10, 5, 7)
+
+					//eye color
+					fill("#000000")
+					// eyes
+					circle(0+12, 0-20, 5)
+					circle(0-12, 0-20, 5)
+
+					// text(i + "," + j, x, y)
+
+					noFill()
+
+					arc(0, 0+25, 30, 10, 0, PI);
+
+					//if(random()<0.5)
+
+
+					//circle(x+25, y+13, 10)
+					//circle(x-25, y+13, 10)
+
+					pop()
+
+
+
 				}
 				
 			}
