@@ -17,7 +17,9 @@
 		let xspeed
 		let yspeed
 		let d=50
-		let fillColor = "#C1666B"
+		let fillColor = "blue"
+
+
 
 		function setup() {
 			createCanvas(800, 800)
@@ -42,11 +44,7 @@
 			}
 
 			//if xpos is larger than width/2 AND ypos is less than height/2, chance color
-			if (xpos > width/2 && ypos < height/2) {
-				fillColor="#48A9A6"
-			} else {
-				fillColor="#C1666B"
-			}
+			changeBallColor("pink","black","blue", "red")
 
 			ypos += yspeed
 			xpos += xspeed
@@ -54,6 +52,22 @@
 			fill(fillColor)
 			circle(xpos, ypos, 50)
 		}
+
+		function changeBallColor(topRightColor, bottomRightColor, bottomLeftColor, topLeftColor) 
+		{
+
+			if (xpos > width/2 && ypos < height/2) {
+				fillColor= topRightColor
+			} else if (xpos > width/2 && ypos > height/2){
+				fillColor=bottomRightColor
+			} else if (xpos < width/2 && ypos > height/2){
+				fillColor=bottomLeftColor
+			} else if (xpos < width/2 && ypos < height/2){
+				fillColor=topLeftColor
+			}
+
+		}
+
 
 	</script>
 
